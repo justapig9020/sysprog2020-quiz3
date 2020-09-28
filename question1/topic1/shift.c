@@ -6,9 +6,13 @@
 int main(void) {
     int32_t sar = MAX;
     uint32_t shr = MAX;
+    printf("SAR: %x -> %x\n", sar, sar >> 3);
+    printf("SHR: %x -> %x\n", shr, shr >> 3);
 
-    printf("SAR: %x -> %x\n", sar, sar >> 1);
-    printf("SHR: %x -> %x\n", shr, shr >> 1);
+    sar &= ~(0x80000000);
+    shr &= ~(0x80000000);
+    printf("SAR: %x -> %x\n", sar, sar >> 3);
+    printf("SHR: %x -> %x\n", shr, shr >> 3);
 
     return 0;
 }
